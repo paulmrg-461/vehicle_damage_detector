@@ -292,18 +292,3 @@ La aplicación genera logs estructurados con:
 3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 👥 Autores
-
-- **Desarrollador Principal** - Implementación inicial
-
-## 🙏 Agradecimientos
-
-- YOLOv11 por el modelo de detección
-- FastAPI por el framework web
-- OpenCV por las herramientas de procesamiento de video
-- Docker por la containerización
