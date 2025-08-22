@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  vehicle-damage-detector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: vehicle_damage_detector_app
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./videos:/app/videos
+      - ./output:/app/output
+      - ./logs:/app/logs
+      - ./config:/app/config
+      - ./src:/app/src
+    environment:
+      - PYTHONPATH=/app
+      - LOG_LEVEL=INFO
+      - MODEL_PATH=/app/models
+    restart: unless-stopped
+    networks:
+      - vehicle-network
+
+  # Servicio opcional para base de datos si se necesita persistencia
+  # postgres:
+  #   image: postgres:15
+  #   container_name: vehicle_damage_db
+  #   environment:
+  #     POSTGRES_DB: vehicle_damage
+  #     POSTGRES_USER: admin
+  #     POSTGRES_PASSWORD: password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   ports:
+  #     - "5432:5432"
+  #   networks:
+  #     - vehicle-network
+
+networks:
+  vehicle-network:
+    driver: bridge
+
+# volumes:
+#   postgres_data:

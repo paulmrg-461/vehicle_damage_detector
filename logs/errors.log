@@ -1,0 +1,1028 @@
+2025-08-22 08:57:23 | ERROR | __main__:run_demo:308 | Demo failed with error: 'Settings' object has no attribute 'setup_directories'
+2025-08-22 08:59:24 | ERROR | src.infrastructure.config.dependencies:health_check:148 | Error en damage_detection_service: YOLODamageDetector.__init__() got an unexpected keyword argument 'confidence_threshold'
+2025-08-22 08:59:24 | ERROR | src.infrastructure.config.dependencies:health_check:155 | Error en video_processing_service: OpenCVVideoProcessor.__init__() got an unexpected keyword argument 'output_dir'
+2025-08-22 08:59:24 | ERROR | __main__:run_demo:245 | Setup failed, aborting demo
+2025-08-22 08:59:49 | ERROR | __main__:run_demo:307 | Demo failed with error: 'DependencyContainer' object has no attribute 'get_file_management_app_service'
+2025-08-22 09:00:43 | ERROR | __main__:run_demo:293 | Demo failed with error: 'DependencyContainer' object has no attribute 'get_video_processing_app_service'
+2025-08-22 09:02:28 | ERROR | __main__:process_single_video:105 | Failed to process videos/car1.mp4: 'str' object has no attribute 'exists'
+2025-08-22 09:02:29 | ERROR | __main__:process_single_video:105 | Failed to process videos/car2.mp4: 'str' object has no attribute 'exists'
+2025-08-22 09:02:30 | ERROR | __main__:process_multiple_videos:142 | Failed to process multiple videos: argument of type 'AttributeError' is not iterable
+2025-08-22 09:02:30 | ERROR | __main__:get_processing_statistics:181 | Failed to get statistics: 'GetDetectionResultsUseCase' object has no attribute 'execute'
+2025-08-22 14:22:06 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [6b503fc3] GET /health - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.002s
+2025-08-22 14:22:06 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /health - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:22:06 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [6b567784] GET /favicon.ico - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.001s
+2025-08-22 14:22:06 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /favicon.ico - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:22:27 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [b9668ef0] GET /health - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.002s
+2025-08-22 14:22:27 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /health - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:28:36 | ERROR | src.presentation.api.routes.health_routes:health_check:54 | Health check failed: 1 validation error for HealthCheckResponse
+services.damage_detection_service
+  Input should be a valid boolean [type=bool_type, input_value=<coroutine object YOLODam...oaded at 0x7d48f42ff4c0>, input_type=coroutine]
+    For further information visit https://errors.pydantic.dev/2.5/v/bool_type
+2025-08-22 14:28:36 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [e3866e72] GET /api/v1/health/ - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.010s
+2025-08-22 14:28:36 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /api/v1/health/ - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 93, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 118, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 36, in http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:30:10 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [85802599] GET /health - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.002s
+2025-08-22 14:30:10 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /health - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:31:48 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [cc1024cd] GET /health - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.002s
+2025-08-22 14:31:48 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /health - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:32:01 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [994c4f3d] GET /health - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.001s
+2025-08-22 14:32:01 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /health - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:32:41 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [2fa2621e] GET /health - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.002s
+2025-08-22 14:32:41 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /health - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:33:57 | ERROR | src.presentation.api.main:lifespan:42 | Failed to initialize dependencies: 'coroutine' object has no attribute 'values'
+2025-08-22 14:34:03 | ERROR | src.presentation.api.main:lifespan:42 | Failed to initialize dependencies: 'coroutine' object has no attribute 'values'
+2025-08-22 14:34:09 | ERROR | src.presentation.api.main:lifespan:42 | Failed to initialize dependencies: 'coroutine' object has no attribute 'values'
+2025-08-22 14:34:14 | ERROR | src.presentation.api.main:lifespan:42 | Failed to initialize dependencies: 'coroutine' object has no attribute 'values'
+2025-08-22 14:34:20 | ERROR | src.presentation.api.main:lifespan:42 | Failed to initialize dependencies: 'coroutine' object has no attribute 'values'
+2025-08-22 14:34:27 | ERROR | src.presentation.api.main:lifespan:42 | Failed to initialize dependencies: 'coroutine' object has no attribute 'values'
+2025-08-22 14:34:58 | ERROR | src.presentation.api.routes.health_routes:detailed_health_check:151 | Detailed health check failed: 'Settings' object has no attribute 'environment'
+2025-08-22 14:34:58 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [ad52a1bc] GET /api/v1/health/detailed - Error: TypeError: Object of type datetime is not JSON serializable - Time: 1.012s
+2025-08-22 14:34:58 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /api/v1/health/detailed - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 93, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 118, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 36, in http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:35:59 | ERROR | src.presentation.api.routes.health_routes:detailed_health_check:154 | Detailed health check failed: 'Settings' object has no attribute 'environment'
+2025-08-22 14:37:02 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [6e189be4] GET /api/v1/health/model-info - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.001s
+2025-08-22 14:37:02 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /api/v1/health/model-info - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:43:06 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [5eeeec1e] GET /api/v1/health/model-info - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.002s
+2025-08-22 14:43:06 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /api/v1/health/model-info - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:43:40 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [96c286cd] GET /api/v1/health/model-info - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.001s
+2025-08-22 14:43:40 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /api/v1/health/model-info - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:44:19 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [caf1f86c] GET /api/v1/health/model-info - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.002s
+2025-08-22 14:44:19 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /api/v1/health/model-info - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:45:01 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [4ce0e79a] GET /api/v1/health/model-info - Error: TypeError: Object of type datetime is not JSON serializable - Time: 0.001s
+2025-08-22 14:45:01 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:176 | Unhandled exception: TypeError: Object of type datetime is not JSON serializable - Path: /api/v1/health/model-info - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 91, in receive_nowait
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 63, in starlette_http_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type datetime is not JSON serializable
+
+2025-08-22 14:54:04 | ERROR | src.presentation.api.routes.video_routes:list_videos:326 | Failed to list videos: object of type 'coroutine' has no len()
+2025-08-22 14:58:04 | ERROR | src.presentation.api.routes.video_routes:list_videos:326 | Failed to list videos: 2 validation errors for VideoListResponse
+videos
+  Field required [type=missing, input_value={'success': True, 'messag...: 0, 'total_pages': 0}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+total_count
+  Field required [type=missing, input_value={'success': True, 'messag...: 0, 'total_pages': 0}}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+2025-08-22 15:00:19 | ERROR | src.presentation.api.routes.video_routes:process_video:82 | Failed to process video: 'DependencyContainer' object has no attribute 'get_video_processing_app_service'
+2025-08-22 15:02:31 | ERROR | src.presentation.api.routes.video_routes:process_video:82 | Failed to process video: 'ProcessVideoUseCase' object has no attribute 'process_video_async'
+2025-08-22 15:04:04 | ERROR | src.presentation.api.routes.video_routes:process_video:87 | Failed to process video: WMV
+2025-08-22 15:05:31 | ERROR | src.presentation.api.routes.video_routes:process_video:87 | Failed to process video: WMV
+2025-08-22 15:06:46 | ERROR | src.presentation.api.routes.video_routes:process_video:87 | Failed to process video: ('Video file not found: car1.mp4', {'video_path': 'car1.mp4'})
+2025-08-22 15:07:29 | ERROR | src.presentation.api.routes.video_routes:process_video:88 | Failed to process video: Video no encontrado: b6372cf4-5b5f-4d65-8fe9-0bd2fa77b081
+2025-08-22 15:15:28 | ERROR | src.presentation.api.routes.video_routes:process_video:88 | Failed to process video: 2 validation errors for ProcessVideoResponse
+video_id
+  Field required [type=missing, input_value={'success': True, 'messag...idence_threshold': 0.5}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+detection_result
+  Field required [type=missing, input_value={'success': True, 'messag...idence_threshold': 0.5}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+2025-08-22 15:16:43 | ERROR | src.presentation.api.routes.video_routes:process_video:85 | Failed to process video: 'DetectionResult' object has no attribute 'video_id'
+2025-08-22 15:17:56 | ERROR | src.presentation.api.routes.video_routes:process_video:85 | Failed to process video: 1 validation error for ProcessVideoResponse
+detection_result
+  Input should be a valid dictionary or instance of DetectionResultResponse [type=model_type, input_value=DetectionResult(id='2f80b...notated_video_path=None), input_type=DetectionResult]
+    For further information visit https://errors.pydantic.dev/2.5/v/model_type
+2025-08-22 15:19:43 | ERROR | src.presentation.api.routes.video_routes:list_videos:367 | Failed to list videos: 'VideoMetadata' object has no attribute 'duration_seconds'
+2025-08-22 15:20:35 | ERROR | src.presentation.api.routes.video_routes:list_videos:367 | Failed to list videos: 'NoneType' object has no attribute 'isoformat'
+2025-08-22 15:28:00 | ERROR | src.presentation.api.routes.video_routes:list_videos:367 | Failed to list videos: 5 validation errors for VideoResponse
+id
+  Field required [type=missing, input_value={'success': True, 'messag...3', 'updated_at': None}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+file_path
+  Field required [type=missing, input_value={'success': True, 'messag...3', 'updated_at': None}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+status
+  Field required [type=missing, input_value={'success': True, 'messag...3', 'updated_at': None}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+created_at
+  Field required [type=missing, input_value={'success': True, 'messag...3', 'updated_at': None}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+updated_at
+  Field required [type=missing, input_value={'success': True, 'messag...3', 'updated_at': None}}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.5/v/missing
+2025-08-22 15:29:19 | ERROR | src.presentation.api.routes.video_routes:list_videos:363 | Failed to list videos: 1 validation error for VideoResponse
+updated_at
+  Input should be a valid datetime [type=datetime_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.5/v/datetime_type
+2025-08-22 15:29:53 | ERROR | src.presentation.api.routes.video_routes:get_video:409 | Failed to get video 595150b6-d009-4224-bea3-dbd9494fee03: 'coroutine' object has no attribute 'id'
+2025-08-22 15:30:26 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [855a40dd] GET /api/v1/videos/595150b6-d009-4224-bea3-dbd9494fee03 - Error: ResponseValidationError: 4 validation errors:
+  {'type': 'missing', 'loc': ('response', 'id'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'file_path'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'status'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'created_at'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+ - Time: 0.004s
+2025-08-22 15:30:26 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:183 | Unhandled exception: ResponseValidationError: 4 validation errors:
+  {'type': 'missing', 'loc': ('response', 'id'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'file_path'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'status'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'created_at'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+ - Path: /api/v1/videos/595150b6-d009-4224-bea3-dbd9494fee03 - Method: GET
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 93, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 118, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 79, in __call__
+    raise exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 68, in __call__
+    await self.app(scope, receive, sender)
+  File "/usr/local/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 20, in __call__
+    raise e
+  File "/usr/local/lib/python3.11/site-packages/fastapi/middleware/asyncexitstack.py", line 17, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 718, in __call__
+    await route.handle(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/routing.py", line 66, in app
+    response = await func(request)
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 292, in app
+    content = await serialize_response(
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/fastapi/routing.py", line 155, in serialize_response
+    raise ResponseValidationError(
+fastapi.exceptions.ResponseValidationError: 4 validation errors:
+  {'type': 'missing', 'loc': ('response', 'id'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'file_path'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'status'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+  {'type': 'missing', 'loc': ('response', 'created_at'), 'msg': 'Field required', 'input': ApiResponse(success=True, message='Video retrieved', timestamp=datetime.datetime(2025, 8, 22, 15, 30, 26, 64496)), 'url': 'https://errors.pydantic.dev/2.5/v/missing'}
+
+
+2025-08-22 15:31:10 | ERROR | src.presentation.api.middleware.logging_middleware:dispatch:62 | [860b5abf] POST /api/v1/videos/process - Error: TypeError: Object of type bytes is not JSON serializable - Time: 0.294s
+2025-08-22 15:31:10 | ERROR | src.presentation.api.middleware.error_handler:general_exception_handler:183 | Unhandled exception: TypeError: Object of type bytes is not JSON serializable - Path: /api/v1/videos/process - Method: POST
+Traceback: Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 98, in receive
+    return self.receive_nowait()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 93, in receive_nowait
+    raise WouldBlock
+anyio.WouldBlock
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 78, in call_next
+    message = await recv_stream.receive()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/anyio/streams/memory.py", line 118, in receive
+    raise EndOfStream
+anyio.EndOfStream
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/errors.py", line 162, in __call__
+    await self.app(scope, receive, _send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 108, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/logging_middleware.py", line 39, in dispatch
+    response = await call_next(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 84, in call_next
+    raise app_exc
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/base.py", line 70, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/cors.py", line 83, in __call__
+    await self.app(scope, receive, send)
+  File "/usr/local/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 88, in __call__
+    response = await handler(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/src/presentation/api/middleware/error_handler.py", line 94, in validation_exception_handler
+    return JSONResponse(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 196, in __init__
+    super().__init__(content, status_code, headers, media_type, background)
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 55, in __init__
+    self.body = self.render(content)
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/starlette/responses.py", line 199, in render
+    return json.dumps(
+           ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 200, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 258, in iterencode
+    return _iterencode(o, 0)
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bytes is not JSON serializable
+
+2025-08-22 15:34:37 | ERROR | src.presentation.api.routes.video_routes:upload_and_process_video:271 | Failed to upload and process video: 'Settings' object has no attribute 'supported_video_formats'
+2025-08-22 15:35:12 | ERROR | src.presentation.api.routes.video_routes:upload_and_process_video:271 | Failed to upload and process video: 'ProcessVideoUseCase' object has no attribute 'process_video_async'
+2025-08-22 15:35:53 | ERROR | src.presentation.api.routes.video_routes:upload_and_process_video:270 | Failed to upload and process video: 'ProcessVideoUseCase' object has no attribute 'process_single_video'
+2025-08-22 15:36:27 | ERROR | src.presentation.api.routes.video_routes:upload_and_process_video:270 | Failed to upload and process video: 'ProcessVideoUseCase' object has no attribute 'process_single_video'
+2025-08-22 15:40:09 | ERROR | src.presentation.api.routes.video_routes:process_video:130 | Failed to process video: 'VideoProcessingAppService' object has no attribute 'execute'
+2025-08-22 15:42:13 | ERROR | src.presentation.api.routes.video_routes:process_video:128 | Failed to process video: ('Video file not found: /videos/car1.mp4', {'video_path': '/videos/car1.mp4'})
+2025-08-22 15:42:20 | ERROR | src.presentation.api.routes.video_routes:process_video:128 | Failed to process video: ('Video file not found: videos/car1.mp4', {'video_path': 'videos/car1.mp4'})
